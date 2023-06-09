@@ -32,7 +32,7 @@ import { validarEmail, validarPassword } from "./validaciones";
     }
   } */
 
-const DatosUsuario = () => {
+const DatosUsuario = ({ updateStep }) => {
   const [email, setEmail] = useState({value: "Harland", valid:null })
   const [password, setPassword] = useState({value: "abc", valid:null })
   
@@ -51,6 +51,7 @@ const DatosUsuario = () => {
         if (email.valid && password.valid){
           console.log("Siguiente formulario")
           console.log(email, password);
+          updateStep(1);
         }else {
           console.log("No hacer nada")
         }
